@@ -16,7 +16,7 @@ with open(r'./model/90calibrated_clf.pickle', 'rb') as f:
 
 
 def plot_probabilities(probabilities):
-    plt.figure()
+    plt.figure(figsize=(11, 18))
     plt.xticks([0, 28, 60, 90])
     plt.plot([0, 28, 60, 90], probabilities, marker='o')
     plt.xlabel('Days')
@@ -118,7 +118,7 @@ with gr.Blocks() as demo:
             age_input = gr.Number(label="admission_age", step=1)
             height_input = gr.Number(label="Height (cm)", step=0.1)  # 身高输入框，单位为厘米
             weight_input = gr.Number(label="Weight (kg)", step=0.1)  # 体重输入框，单位为千克
-        with gr.Column():
+        
             # 临床评分部分
             gr.Markdown("## Clinical Scoring Section")
             lods_input = gr.Number(label="LODS (Logistic Organ Dysfunction Score)", step=0.1)
@@ -161,6 +161,7 @@ with gr.Blocks() as demo:
 
             # 肾功能测试部分
             gr.Markdown("### Renal Function Tests")
+        with gr.Column():
             # 尿素氮
             gr.Markdown("#### Blood Urea Nitrogen (BUN) (mg/dL)")
             bun_max = gr.Number(label="Max")
@@ -169,7 +170,7 @@ with gr.Blocks() as demo:
             gr.Markdown("#### Creatinine (mg/dL)")
             creatinine_max = gr.Number(label="Max")
             creatinine_min = gr.Number(label="Min")
-        with gr.Column():
+        
             # 血糖水平
             gr.Markdown("### Glucose Levels")
             # 血糖
@@ -195,7 +196,8 @@ with gr.Blocks() as demo:
             submit_button = gr.Button("Submit")
 
     with gr.Row():
-            gr.Markdown("Risk Prediction Results")
+            gr.Markdown("## Risk Prediction Results")
+    with gr.Row():
             risk_category_00 = gr.Label(label="00-day Prediction Category")
             #output_prob_28 = gr.Textbox(label="28-day Calibrated Probability", interactive=False)
             risk_category_28 = gr.Label(label="28-day Prediction Category")
