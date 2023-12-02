@@ -5,13 +5,13 @@ import numpy as np
 import pickle
 import matplotlib.pyplot as plt
 # 导入C:\MyProject\MIMIC\dvt_diabetes\savemodel\c-curve\00calibrated.pickle
-with open(r'.\\model\\00calibrated.pickle', 'rb') as f:
+with open(r'./model/00calibrated.pickle', 'rb') as f:
     modelcalibration00 = pickle.load(f)
-with open(r'.\\model\\28calibrated.pickle', 'rb') as f:
+with open(r'./model/28calibrated.pickle', 'rb') as f:
     modelcalibration28 = pickle.load(f)
-with open(r'.\\model\\60calibrated.pickle', 'rb') as f:
+with open(r'./model/60calibrated.pickle', 'rb') as f:
     modelcalibration60 = pickle.load(f)
-with open(r'.\\model\\90calibrated.pickle', 'rb') as f:
+with open(r'./model/90calibrated.pickle', 'rb') as f:
     modelcalibration90 = pickle.load(f)
 
 def plot_probabilities(probabilities):
