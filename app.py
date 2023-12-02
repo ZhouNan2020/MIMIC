@@ -16,7 +16,7 @@ with open(r'./model/90calibrated_clf.pickle', 'rb') as f:
 
 
 def plot_probabilities(probabilities):
-    plt.figure(figsize=(11, 18))
+    plt.figure(figsize=(18, 11))
     plt.xticks([0, 28, 60, 90])
     plt.plot([0, 28, 60, 90], probabilities, marker='o')
     plt.xlabel('Days')
@@ -135,11 +135,12 @@ with gr.Blocks() as demo:
             gr.Markdown("#### White Blood Cell Count (WBC) (10^9/L)")
             wbc_max = gr.Number(label="Max")
             wbc_min = gr.Number(label="Min")
+        with gr.Column():
             # 血小板计数
             gr.Markdown("#### Platelet Count (10^9/L)")
             platelet_max = gr.Number(label="Max")
             platelet_min = gr.Number(label="Min")
-        with gr.Column():
+        
             # 肝功能测试部分
             gr.Markdown("### Liver Function Tests")
             # 碱性磷酸酶
@@ -161,11 +162,12 @@ with gr.Blocks() as demo:
 
             # 肾功能测试部分
             gr.Markdown("### Renal Function Tests")
-        with gr.Column():
+        
             # 尿素氮
             gr.Markdown("#### Blood Urea Nitrogen (BUN) (mg/dL)")
             bun_max = gr.Number(label="Max")
             bun_min = gr.Number(label="Min")
+        with gr.Column():
             # 肌酐
             gr.Markdown("#### Creatinine (mg/dL)")
             creatinine_max = gr.Number(label="Max")
