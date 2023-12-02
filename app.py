@@ -14,6 +14,7 @@ with open(r'./model/60calibrated_clf.pickle', 'rb') as f:
 with open(r'./model/90calibrated_clf.pickle', 'rb') as f:
     modelcalibration90 = pickle.load(f)
 
+
 def plot_probabilities(probabilities):
     plt.figure()
     plt.xticks([0, 28, 60, 90])
@@ -103,7 +104,7 @@ def process_input(age_input, height_input, weight_input, lods_input, apache_inpu
     risk_category_60 = get_risk_category(calibrated_class_60)
     risk_category_90 = get_risk_category(calibrated_class_90)
     # 返回校准后的概率和类别
-    return risk_category_00, risk_category_28, risk_category_60, risk_category_90, plot
+    return risk_category_00, risk_category_28, risk_category_60, risk_category_90, output_plot
 
 
 
@@ -193,13 +194,13 @@ with gr.Blocks() as demo:
 
         with gr.Column():
             gr.Markdown("Risk Prediction Results")
-            output_class_00 = gr.Label(label="00-day Prediction Category")
+            risk_category_00 = gr.Label(label="00-day Prediction Category")
             #output_prob_28 = gr.Textbox(label="28-day Calibrated Probability", interactive=False)
-            output_class_28 = gr.Label(label="28-day Prediction Category")
+            risk_category_28 = gr.Label(label="28-day Prediction Category")
             #output_prob_60 = gr.Textbox(label="60-day Calibrated Probability", interactive=False)
-            output_class_60 = gr.Label(label="60-day Prediction Category")
+            risk_category_60 = gr.Label(label="60-day Prediction Category")
             #output_prob_90 = gr.Textbox(label="90-day Calibrated Probability", interactive=False)
-            output_class_90 = gr.Label(label="90-day Prediction Category")
+            risk_category_90 = gr.Label(label="90-day Prediction Category")
             #output_prob_00 = gr.Textbox(label="00-day Calibrated Probability", interactive=False)
 
             output_plot = gr.Plot(label="Probability Line Chart")
@@ -222,7 +223,7 @@ with gr.Blocks() as demo:
         risk_category_28,
         risk_category_60,
         risk_category_90,
-        plot
+        output_plot
     ]
 )
                         
