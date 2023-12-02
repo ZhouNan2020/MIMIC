@@ -97,7 +97,7 @@ def process_input(age_input, height_input, weight_input, lods_input, apache_inpu
     calibrated_class_00 = modelcalibration00.predict(data_00)[0]
     
     probabilities = [calibrated_prob_00, calibrated_prob_28, calibrated_prob_60, calibrated_prob_90]
-    plot = plot_probabilities(probabilities)
+    output_plot = plot_probabilities(probabilities)
     
     risk_category_00 = get_risk_category(calibrated_class_00)
     risk_category_28 = get_risk_category(calibrated_class_28)
