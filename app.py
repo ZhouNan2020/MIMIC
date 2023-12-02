@@ -71,16 +71,16 @@ def process_input(age_input, height_input, weight_input, lods_input, apache_inpu
     weight = weight_input
 
     data_28 = np.array([
-        [charlson_comorbidity_index, oasis, LODS, weight, sapsii, apsiii, sofa_24hours, wbc_max, wbc_min, pt_min, inr_min, pt_max, inr_max, admission_type_2, creatinine_min, admission_age, height, platelets_min, ptt_max, admission_location_1, alt_min, sirs, bun_max, insurance_2, bun_min, ptt_min, platelets_max, alp_min, ast_min, bilirubin_total_max, creatinine_max, glucose_max, insurance_1, glucose_mean, glucose_min, alp_max, ast_max, bilirubin_total_min, alt_max, marital_status_1]
+        [charlson_comorbidity_index, oasis, apsiii, weight, sapsii, ast_max, ast_min, alt_min, admission_age, sofa_24hours, pt_min, LODS, alt_max, wbc_min, bilirubin_total_max, height, wbc_max, inr_min, ptt_min, pt_max, inr_max, creatinine_max]
     ])
     data_60 = np.array([
-        [charlson_comorbidity_index, oasis, apsiii, admission_age, wbc_max, weight, wbc_min, sofa_24hours, sapsii, LODS, height, ptt_min, ptt_max, glucose_min, bun_min, pt_min, glucose_mean, pt_max, bun_max, creatinine_min, inr_min, insurance_2, platelets_min, platelets_max, sirs, glucose_max, creatinine_max, inr_max, ast_max, alt_min, alp_max, ast_min, alp_min, alt_max, bilirubin_total_max, admission_type_5, bilirubin_total_min, insurance_1, marital_status_1, admission_location_1]
+        [charlson_comorbidity_index, sofa_24hours, wbc_min, apsiii, sapsii, admission_age, wbc_max, alp_min, weight, height, ast_max, oasis, ptt_max, alt_max, LODS, alt_min, ptt_min, alp_max, pt_min, platelets_max, glucose_min, bilirubin_total_max, bun_max, bun_min, bilirubin_total_min, pt_max]
     ])
     data_90 = np.array([
-        [charlson_comorbidity_index, oasis, apsiii, sapsii, sofa_24hours, wbc_max, admission_age, LODS, height, weight, wbc_min, ptt_max, glucose_min, ptt_min, alp_min, pt_max, alp_max, bun_max, bun_min, creatinine_max, creatinine_min, platelets_max, pt_min, inr_max, bilirubin_total_min, platelets_min, glucose_mean, bilirubin_total_max, glucose_max, insurance_1, inr_min, sirs, alt_min, ast_min, insurance_2, ast_max, alt_max]
+        [charlson_comorbidity_index, apsiii, admission_age, sapsii, LODS, sofa_24hours, oasis, wbc_max, height, wbc_min, weight, bun_min, creatinine_max, ptt_min, ptt_max, creatinine_min, glucose_min, glucose_mean, bilirubin_total_max, alt_min, platelets_min, pt_min, alp_min, bun_max, inr_min, alp_max, platelets_max]
     ])
     data_00 = np.array([
-        [oasis, sofa_24hours, charlson_comorbidity_index, apsiii, LODS, weight, wbc_max, admission_age, wbc_min, pt_min, insurance_1, creatinine_min, creatinine_max, sapsii, bun_min, inr_min, alp_min, platelets_min, pt_max, platelets_max, marital_status_1, bun_max, insurance_2, height, inr_max, ptt_min, alp_max, sirs, alt_max, alt_min, glucose_min, glucose_mean, ast_max, bilirubin_total_max, race_16, ast_min, ptt_max, admission_type_2, admission_type_5, glucose_max, marital_status_2]
+        [oasis, charlson_comorbidity_index, LODS, sofa_24hours, wbc_min, apsiii, sapsii, weight, platelets_min, wbc_max, admission_age, pt_min, alp_min, bun_min, ptt_min, alp_max, inr_min, ast_min]
     ])
 
     # 将数据直接输入概率校准模型
