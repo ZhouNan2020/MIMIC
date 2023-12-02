@@ -131,11 +131,12 @@ with gr.Blocks() as demo:
             gr.Markdown("## Laboratory indicators on the first day")
             # 血液学检验部分
             gr.Markdown("### Hematologic Tests")
+        with gr.Column():
             # 白细胞计数
             gr.Markdown("#### White Blood Cell Count (WBC) (10^9/L)")
             wbc_max = gr.Number(label="Max")
             wbc_min = gr.Number(label="Min")
-        with gr.Column():
+        
             # 血小板计数
             gr.Markdown("#### Platelet Count (10^9/L)")
             platelet_max = gr.Number(label="Max")
@@ -159,10 +160,10 @@ with gr.Blocks() as demo:
             gr.Markdown("#### Total Bilirubin (mg/dL)")
             bilirubin_max = gr.Number(label="Max")
             bilirubin_min = gr.Number(label="Min")
-
+        with gr.Column():
             # 肾功能测试部分
             gr.Markdown("### Renal Function Tests")
-        with gr.Column():
+        
             # 尿素氮
             gr.Markdown("#### Blood Urea Nitrogen (BUN) (mg/dL)")
             bun_max = gr.Number(label="Max")
