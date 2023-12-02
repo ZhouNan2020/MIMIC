@@ -110,12 +110,15 @@ def process_input(age_input, height_input, weight_input, lods_input, apache_inpu
 
 with gr.Blocks() as demo:
     with gr.Row():
+        gr.Markdown('# Prediction of Death Events in ICU Patients with DVT &Diabetes')
+    with gr.Row():
         with gr.Column():
+            gr.Markdown('## Basic Information')
             # 输入控件
             age_input = gr.Number(label="admission_age", step=1)
             height_input = gr.Number(label="Height (cm)", step=0.1)  # 身高输入框，单位为厘米
             weight_input = gr.Number(label="Weight (kg)", step=0.1)  # 体重输入框，单位为千克
-            
+        with gr.Column():
             # 临床评分部分
             gr.Markdown("## Clinical Scoring Section")
             lods_input = gr.Number(label="LODS (Logistic Organ Dysfunction Score)", step=0.1)
@@ -123,9 +126,8 @@ with gr.Blocks() as demo:
             cci_input = gr.Number(label="CCI (Charlson Comorbidity Index)", step=0.1)
             oasis_input = gr.Number(label="OASIS (Oxford Acute Severity of Illness Score)", step=0.1)
             saps_input = gr.Number(label="SAPS II (Simplified Acute Physiology Score II)", step=0.1)
-            
             sofa_input = gr.Number(label="SOFA (Sequential Organ Failure Assessment, 24hr average)", step=0.1)
-        with gr.Column():
+        
             gr.Markdown("## Laboratory indicators on the first day")
             # 血液学检验部分
             gr.Markdown("### Hematologic Tests")
@@ -137,7 +139,7 @@ with gr.Blocks() as demo:
             gr.Markdown("#### Platelet Count (10^9/L)")
             platelet_max = gr.Number(label="Max")
             platelet_min = gr.Number(label="Min")
-
+        with gr.Column():
             # 肝功能测试部分
             gr.Markdown("### Liver Function Tests")
             # 碱性磷酸酶
@@ -193,7 +195,6 @@ with gr.Blocks() as demo:
             submit_button = gr.Button("Submit")
 
     with gr.Row():
-        
             gr.Markdown("Risk Prediction Results")
             risk_category_00 = gr.Label(label="00-day Prediction Category")
             #output_prob_28 = gr.Textbox(label="28-day Calibrated Probability", interactive=False)
