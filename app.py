@@ -167,7 +167,7 @@ with gr.Blocks() as demo:
             gr.Markdown("#### Creatinine (mg/dL)")
             creatinine_max = gr.Number(label="Max")
             creatinine_min = gr.Number(label="Min")
-
+        with gr.Column():
             # 血糖水平
             gr.Markdown("### Glucose Levels")
             # 血糖
