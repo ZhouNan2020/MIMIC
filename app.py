@@ -192,7 +192,8 @@ with gr.Blocks() as demo:
 
             submit_button = gr.Button("Submit")
 
-        with gr.Column():
+    with gr.Row():
+        
             gr.Markdown("Risk Prediction Results")
             risk_category_00 = gr.Label(label="00-day Prediction Category")
             #output_prob_28 = gr.Textbox(label="28-day Calibrated Probability", interactive=False)
@@ -202,7 +203,7 @@ with gr.Blocks() as demo:
             #output_prob_90 = gr.Textbox(label="90-day Calibrated Probability", interactive=False)
             risk_category_90 = gr.Label(label="90-day Prediction Category")
             #output_prob_00 = gr.Textbox(label="00-day Calibrated Probability", interactive=False)
-
+    with gr.Row():
             output_plot = gr.Plot(label="Probability Line Chart")
 
     
@@ -227,4 +228,4 @@ with gr.Blocks() as demo:
     ]
 )
                         
-demo.launch()
+demo.launch((share=True))
