@@ -191,7 +191,7 @@ with gr.Blocks() as demo:
             gr.Markdown("#### Partial Thromboplastin Time (PTT) (seconds)")
             ptt_max = gr.Number(label="Max")
             ptt_min = gr.Number(label="Min")
-
+    with gr.Row():
             submit_button = gr.Button("Submit")
 
     with gr.Row():
